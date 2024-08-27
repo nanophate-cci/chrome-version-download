@@ -9,4 +9,4 @@ jobs:
     steps:
       - checkout
       - browser-tools/install-browser-tools:
-          chrome-version: 127.0.6533.99-1
+          chrome-version: 127.0.6533.99
