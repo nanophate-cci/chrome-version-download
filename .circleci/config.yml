@@ -11,13 +11,10 @@ jobs:
       #- browser-tools/install-browser-tools:
       #    chrome-version: 127.0.6533.99
       - run: |
-          sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-          ls -l /etc/apt/sources.list.d
-          cat /etc/apt/sources.list.d/google.list
-          sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-          sudo apt list --upgradable
-          sudo apt update
-          sudo apt-get install google-chrome-stable=127.0.6533.99
+          curl https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_127.0.6533.99-1_amd64.deb -o google-chrome-stable.deb \
+            && dpkg -i google-chrome-stable.deb \
+            && rm google-chrome-stable.deb \
+            && google-chrome --version
 
 
 
