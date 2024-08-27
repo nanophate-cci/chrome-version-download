@@ -12,7 +12,7 @@ jobs:
       #    chrome-version: 127.0.6533.99
       - run: |
           curl https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_127.0.6533.99-1_amd64.deb -o google-chrome-stable.deb \
-            && dpkg -i google-chrome-stable.deb \
+            && sudo dpkg -i google-chrome-stable.deb \
             && rm google-chrome-stable.deb \
             && google-chrome --version
 
