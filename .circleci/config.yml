@@ -8,5 +8,15 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - browser-tools/install-browser-tools:
-          chrome-version: 127.0.6533.99
+      #- browser-tools/install-browser-tools:
+      #    chrome-version: 127.0.6533.99
+      - run: |
+          sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+          ls -l /etc/apt/sources.list.d
+          cat /etc/apt/sources.list.d/google.list
+          sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          sudo apt update
+          sudo apt-get install google-chrome-stable=127.0.6533.99
+
+
+
