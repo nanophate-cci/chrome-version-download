@@ -2,8 +2,9 @@ version: 2.1
 
 jobs:
   build:
-    image: cimg/base:stable
-  steps:
-    - checkout
-    - browser-tools/install-browser-tools:
-        chrome-version: 127.0.6533.99-1
+    docker: 
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - browser-tools/install-browser-tools:
+          chrome-version: 127.0.6533.99-1
