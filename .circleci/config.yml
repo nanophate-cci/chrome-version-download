@@ -1,8 +1,10 @@
 version: 2.1
 
+orbs:
+  browser-tools: circleci/browser-tools@1.4.8
 jobs:
   build:
-    docker: 
+    docker:
       - image: cimg/base:stable
     steps:
       - checkout
