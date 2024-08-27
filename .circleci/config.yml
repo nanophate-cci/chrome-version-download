@@ -15,6 +15,7 @@ jobs:
           ls -l /etc/apt/sources.list.d
           cat /etc/apt/sources.list.d/google.list
           sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          sudo apt list --upgradable
           sudo apt update
           sudo apt-get install google-chrome-stable=127.0.6533.99
 
